@@ -5,7 +5,7 @@ A new Flutter project.
 
  sdk: '>=3.2.2 <4.0.0'
 
- Launched on Adnroid simulators Start Pixel 6 API 34 и Start 3.7 WGA
+ Launched on Adnroid simulators Start Pixel 6 API 34 and Start 3.7 WGA
  Launched in Google Chrome 
 
 ![Image alt](https://github.com/KrauzinDaniil/flutterLab/raw/main/git_images/Screenshot_3.png)
