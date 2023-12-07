@@ -21,6 +21,7 @@ class CardAction extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(icon),
+            Padding(padding: EdgeInsets.only(right: 12)),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +33,7 @@ class CardAction extends StatelessWidget {
             Expanded(
               child: Align(
                 alignment: Alignment.centerRight,
-                child: Icon(Icons.arrow_forward_ios),
+                child: Icon(Icons.keyboard_arrow_right),
               ),
             ),
           ],

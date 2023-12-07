@@ -9,12 +9,11 @@ class ProfileWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Column(
-          children: <Widget>[ButtonList(),
-             OffersAndLimits(),
-             Interests()
-             ],
-        )
+        Container(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+          children: <Widget>[ButtonList(), OffersAndLimits(), Interests()],
+        )),
       ],
     );
   }

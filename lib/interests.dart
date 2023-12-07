@@ -10,8 +10,11 @@ class Interests extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top : 20)),
             Text("Интересы"),
+            Padding(padding: EdgeInsets.only(top: 8)),
             Text("Мы подбираем истории и предложения по темам, которые вам нравятся"),
+            Padding(padding: EdgeInsets.only(bottom: 16)),
             Wrap(
              children:<Widget> [
               MyChipWidget(title: "Еда"),

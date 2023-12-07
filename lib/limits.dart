@@ -10,12 +10,35 @@ class OffersAndLimits extends StatelessWidget {
         child:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 20)),
             Text("Тарифы и лимиты"),
+            Padding(padding: EdgeInsets.only(top: 8)),
             Text("Для операций в Сбербанк онлайн"),
-            CardAction(icon : Icons.speed, mainText : "Изменить суточный лимит", secondaryText: "На платежи и переводы"), 
-            CardAction(icon : Icons.percent, mainText : "Переводы без комиссии", secondaryText: "Показать остаток в этом месяце"),
-            CardAction(icon : Icons.forward, mainText : "Информация о тарифах и лимитах", secondaryText: "",)
+            CardAction(
+                icon: Icons.speed,
+                mainText: "Изменить суточный лимит",
+                secondaryText: "На платежи и переводы"),
+            Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 25,
+              
+            ),
+            CardAction(
+                icon: Icons.percent,
+                mainText: "Переводы без комиссии",
+                secondaryText: "Показать остаток в этом месяце"),
+            Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 25,
             
+            ),
+            CardAction(
+              icon: Icons.forward,
+              mainText: "Информация о тарифах и лимитах",
+              secondaryText: "",
+            )
           ],
         ),
       ),

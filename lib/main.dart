@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
-
+import 'theme.dart';
+import 'string.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        //  colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 145, 119, 119)),
-        useMaterial3: true,
-      ),
+      theme: customTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
     );
@@ -34,23 +32,26 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String selectedTab = 'profile';
-  Color buttonActiveColor = Colors.green;
+  
   Color buttonPassiveColor = Colors.grey;
   
 
   @override
   Widget build(BuildContext context) {
-    final String assetNamePath = 'assets/woman.png';
-    AssetImage assetImage = AssetImage(assetNamePath);
     return Scaffold(
+      
+      
       appBar: AppBar(
+        surfaceTintColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.close),
+          icon: Icon(Icons.close, color: Theme.of(context).primaryColor),
           onPressed: () {},
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.input),
+            icon: Icon(Icons.input, color: Theme.of(context).primaryColor),
             onPressed: () {},
           ),
         ],
@@ -61,9 +62,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Column(
               children: <Widget>[
-                Image.asset('assets/man.png'),
-                const Text('Екатерина',
-                    style: TextStyle(fontSize: 18.0, color: Colors.black)),
+                Container(
+                  padding: EdgeInsets.only(bottom: 14),
+                  child: Image.asset(
+                    'assets/man.png',
+                    width: 110,
+                    height: 110,
+                  ),
+                ),
+                Text('Екатерина',
+                    style: Theme.of(context).textTheme.displayLarge),
+                Padding(padding: EdgeInsets.only(top: 14)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -76,9 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           border: Border(
                             bottom: BorderSide(
                                 color: selectedTab == 'profile'
-                                    ? buttonActiveColor
+                                    ? Theme.of(context).secondaryHeaderColor
                                     : buttonPassiveColor,
-                                width: 3.0),
+                                width: selectedTab == 'profile' ? 3 : 1.5),
                           ),
                         ),
                         child: Material(
@@ -92,15 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               });
                             },
                             child: Center(
-                              child: Text('Профиль',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                              child: Text(AppStrings.profileText,
+                                  style:  Theme.of(context).textTheme.bodyLarge,
                                   )),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    
                     Expanded(
                       flex: 1,
                       child: Container(
@@ -110,9 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           border: Border(
                             bottom: BorderSide(
                                 color: selectedTab == 'settings'
-                                    ? buttonActiveColor
+                                    ? Theme.of(context).secondaryHeaderColor
                                     : buttonPassiveColor,
-                                width: 3.0),
+                                width: selectedTab == 'settings' ? 3 : 1.5),
                           ),
                         ),
                         child: Material(
@@ -126,15 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               });
                             },
                             child: Center(
-                              child: Text('Настройки',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                              child: Text(AppStrings.settingsText,
+                                  style: Theme.of(context).textTheme.bodyLarge,
                                   )),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    
                   ],
                 ),
               ],

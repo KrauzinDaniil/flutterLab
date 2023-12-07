@@ -6,17 +6,20 @@ class ButtonList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(right: 0),
       child: Align(
         alignment: Alignment.topLeft,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+           
             Text("У вас подключено"),
-            Text("Подписки, автоплатежи и сервисы на которые вы подписались"),
+            Padding(padding: EdgeInsets.only(top: 8)),
+            Text("Подписки, автоплатежи и сервисы на которые вы подписались"),
             SizedBox(
               height: 145,
               child: ListView(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.only(top: 12, bottom: 12),
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   ButtonScroll(

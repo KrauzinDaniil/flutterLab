@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'main.dart';
+
 
 
 class MyChipWidget extends StatefulWidget {
@@ -24,9 +24,10 @@ class _MyChipWidgetState extends State<MyChipWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 32,
       padding: EdgeInsets.all(3.0),
       child: FloatingActionButton.extended(
+        elevation: 0,
         splashColor: Colors.green,
         backgroundColor: chosen ? buttonColorChosen : buttonColorDefault,
         onPressed: () {
