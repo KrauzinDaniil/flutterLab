@@ -1,16 +1,16 @@
 # flutter_lab
 
 A new Flutter project.
+ Version SDK: 
 
-## Getting Started
+ sdk: '>=3.2.2 <4.0.0'
 
-This project is a starting point for a Flutter application.
+ Launched on Adnroid simulators Start Pixel 6 API 34 и Start 3.7 WGA
+ Launched in Google Chrome 
 
-A few resources to get you started if this is your first Flutter project:
+![Image alt](https://github.com/KrauzinDaniil/flutterLab/raw/main/git_images/Screenshot_3.png)
+![Image alt](https://github.com/KrauzinDaniil/flutterLab/raw/main/git_images/Screenshot_4.png)
+![Image alt](https://github.com/KrauzinDaniil/flutterLab/raw/main/git_images/Screenshot_5.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
