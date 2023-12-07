@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'theme.dart';
-import 'string.dart';
-
+import 'strings/string.dart';
+import 'package:flutter_lab/userData.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -32,15 +32,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String selectedTab = 'profile';
-  
+
   Color buttonPassiveColor = Colors.grey;
-  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      
       appBar: AppBar(
         surfaceTintColor: Theme.of(context).primaryColor,
         backgroundColor: Colors.transparent,
@@ -70,9 +67,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 110,
                   ),
                 ),
-                Text('Екатерина',
+                Text(UserData.name,
                     style: Theme.of(context).textTheme.displayLarge),
-                Padding(padding: EdgeInsets.only(top: 14)),
+                const Padding(padding: EdgeInsets.only(top: 14)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -93,22 +90,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            splashColor: Colors.green,
                             onTap: () {
                               setState(() {
                                 selectedTab =
-                                    'profile'; // При нажатии на эту кнопку выбирается вкладка "Профиль"
+                                    'profile'; 
                               });
                             },
                             child: Center(
-                              child: Text(AppStrings.profileText,
-                                  style:  Theme.of(context).textTheme.bodyLarge,
-                                  )),
-                            ),
+                                child: Text(
+                              AppStrings.profileText,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            )),
                           ),
                         ),
                       ),
-                    
+                    ),
                     Expanded(
                       flex: 1,
                       child: Container(
@@ -126,27 +122,26 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            splashColor: Colors.green,
                             onTap: () {
                               setState(() {
                                 selectedTab =
-                                    'settings'; // При нажатии на эту кнопку выбирается вкладка "Профиль"
+                                    'settings'; 
                               });
                             },
                             child: Center(
-                              child: Text(AppStrings.settingsText,
-                                  style: Theme.of(context).textTheme.bodyLarge,
-                                  )),
-                            ),
+                                child: Text(
+                              AppStrings.settingsText,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            )),
                           ),
                         ),
                       ),
-                    
+                    ),
                   ],
                 ),
               ],
             ),
-            selectedTab == 'profile' ? ProfileWidget() : SettingsWidget(),
+            selectedTab == 'profile' ? const ProfileWidget() : const SettingsWidget(),
           ],
         ),
       ),
@@ -155,11 +150,13 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class SettingsWidget extends StatelessWidget {
+  const SettingsWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
-      child: Text('Это вкладка "Настройки"'),
+      padding: const EdgeInsets.all(16.0),
+      child: const Text('Это вкладка "Настройки"'),
     );
   }
 }

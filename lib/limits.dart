@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
 import 'cardView.dart';
+import 'strings/string.dart';
 
 class OffersAndLimits extends StatelessWidget {
+  const OffersAndLimits({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Align(
-        alignment: Alignment.topLeft,
-        child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: 20)),
-            Text("Тарифы и лимиты"),
-            Padding(padding: EdgeInsets.only(top: 8)),
-            Text("Для операций в Сбербанк онлайн"),
-            CardAction(
-                icon: Icons.speed,
-                mainText: "Изменить суточный лимит",
-                secondaryText: "На платежи и переводы"),
-            Divider(
-              color: Colors.grey,
-              thickness: 1,
-              indent: 25,
-              
-            ),
-            CardAction(
-                icon: Icons.percent,
-                mainText: "Переводы без комиссии",
-                secondaryText: "Показать остаток в этом месяце"),
-            Divider(
-              color: Colors.grey,
-              thickness: 1,
-              indent: 25,
-            
-            ),
-            CardAction(
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          const Padding(padding: EdgeInsets.only(top: 20)),
+          Text(AppStrings.textHeadlineTwoFirst,
+              style: Theme.of(context).textTheme.displayMedium),
+          const Padding(padding: EdgeInsets.only(top: 8)),
+          Text(AppStrings.textHeadlineTwoSecond,
+              style: Theme.of(context).textTheme.displaySmall),
+          const Padding(padding: EdgeInsets.only(bottom: 8)),
+          const CardAction(
+              icon: Icons.speed,
+              mainText: AppStrings.textChangeLimit,
+              secondaryText: AppStrings.textChangeLimitSecond,
+              makeBorder: true),
+    
+          const CardAction(
+              icon: Icons.percent,
+              mainText: AppStrings.textTransfers,
+              secondaryText: AppStrings.textTransfersSecond,
+              makeBorder: true),
+        
+          const CardAction(
               icon: Icons.forward,
-              mainText: "Информация о тарифах и лимитах",
+              mainText: AppStrings.textInformation,
               secondaryText: "",
-            )
-          ],
-        ),
+              makeBorder: false)
+        ],
       ),
     );
   }

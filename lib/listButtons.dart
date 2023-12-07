@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
 import 'scrollButton.dart';
+import 'strings/string.dart';
+import 'userData.dart';
 
 class ButtonList extends StatelessWidget {
-  
+  const ButtonList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 0),
+      padding: const EdgeInsets.only(right: 0),
       child: Align(
         alignment: Alignment.topLeft,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-           
-            Text("У вас подключено"),
-            Padding(padding: EdgeInsets.only(top: 8)),
-            Text("Подписки, автоплатежи и сервисы на которые вы подписались"),
+            Text(AppStrings.textHeadlineOneFirst,
+                style: Theme.of(context).textTheme.displayMedium),
+            const Padding(padding: EdgeInsets.only(top: 8)),
+            Text(AppStrings.textHeadlineOneSecond,
+                style: Theme.of(context).textTheme.displaySmall),
             SizedBox(
-              height: 145,
+              height: 160,
               child: ListView(
-                padding: EdgeInsets.only(top: 12, bottom: 12),
+                padding: const EdgeInsets.only(top: 12, bottom: 12),
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  ButtonScroll(
-                      image: "assets/sberphotoOne.png",
-                      name: "СберПрайм",
-                      date: "Платеж 9 июля",
-                      price: "199 ₽ в месяц"),
-                  ButtonScroll(
-                      image: "assets/sberphotoTwo.png",
-                      name: "Переводы",
-                      date: "Автопродление 19 августа",
-                      price: "199 ₽ в месяц"),
+                  for (int i = 0; i < UserData.list.length; i++)
+                    ButtonScroll(
+                        image: UserData.list[i].image,
+                        name: UserData.list[i].title,
+                        date: UserData.list[i].date,
+                        price: UserData.list[i].price),
                 ],
               ),
             ),

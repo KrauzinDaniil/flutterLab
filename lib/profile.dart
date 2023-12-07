@@ -4,16 +4,18 @@ import 'limits.dart';
 import 'interests.dart';
 
 class ProfileWidget extends StatelessWidget {
+  const ProfileWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
-          children: <Widget>[ButtonList(), OffersAndLimits(), Interests()],
-        )),
+              children: <Widget>[ButtonList(), OffersAndLimits(), Interests()],
+            )),
       ],
     );
   }
